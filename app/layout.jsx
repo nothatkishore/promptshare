@@ -1,26 +1,27 @@
 import '@styles/globals.css'
-import Nav from '@components/Nav'
-import Provider from '@components/Provider'
 
 export const metadata = {
-    title: 'Promptopia',
-    description: 'Discover and Share AI prompts'
+    title : 'PromptShare',
+    description : 'Discover and share prompts'
 }
 
-const RootLayout = ( {children} ) => {
-    return (
-        <html lang='en'>
-            <body>
-                <div className="main">
-                    <div className="gradient" />
-                </div>
-                <main className="app">
-                    <Nav />
-                    {children}
-                </main>
-            </body>
-        </html>
-    )
+
+const RootLayout = ({children}) => {
+  return (
+    <html lang='en'>
+        <body>
+            {/* Not necessary, this is just for backgrounds */}
+            <div className="main">
+                <div className='gradient'/>
+            </div>
+            {/* Main component which has everything inside it */}
+            <main className='app'>
+                {children}
+            </main>
+
+        </body>
+    </html>
+  )
 }
 
 export default RootLayout
