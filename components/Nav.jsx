@@ -17,8 +17,8 @@ const Nav = () => {
     const setProvider = async () => {
       const response = await getProviders()
       setProviders(response)
+      console.log(response)
     }
-
     setProvider()
   }, [])
 
@@ -74,10 +74,9 @@ const Nav = () => {
                     onClick={() => signIn(provider.id)}
                     className='black_btn'
                   >
-                    Sign In
+                    Sign In with {provider.name}
                   </button>
                 ))
-
               }
             </>
           )}
@@ -148,7 +147,7 @@ const Nav = () => {
                     onClick={() => signIn(provider.id)}
                     className='black_btn'
                   >
-                    Sign In
+                    Sign In with {provider.name}
                   </button>
                 ))
               }

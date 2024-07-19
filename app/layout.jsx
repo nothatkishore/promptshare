@@ -12,6 +12,8 @@ const RootLayout = ({ children }) => {
     return (
         <html lang='en'>
             <body>
+                {/* This is used to make session details availabe to all components
+                like Profile picture,username, email and others. */}
                 <Provider>
                     {/* Not necessary, this is just for backgrounds */}
                     <div className="main">
