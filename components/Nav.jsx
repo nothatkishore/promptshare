@@ -8,7 +8,7 @@ import { signIn, signOut, useSession, getProviders } from 'next-auth/react'
 
 const Nav = () => {
 
-  const isUserLogged = true
+  const { data : session } = useSession()
 
   const [Providers, setProviders] = useState(null)
   const [Toggle, setToggle] = useState(false)
@@ -39,7 +39,7 @@ const Nav = () => {
 
       {/* Desktop navigation : If the screen size is above 640px apply the below property*/}
       <div className="sm:flex hidden">
-        {isUserLogged ? (
+        {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
             <Link href='/createPrompt' className='black_btn'>
               Create post
@@ -51,10 +51,11 @@ const Nav = () => {
 
             <Link href='/profile'>
               <Image
-                src='/assets/images/logo.svg'
+                src={session?.user?.image}
                 width={37}
                 height={37}
                 alt='profile'
+                className='rounded-full'
               />
             </Link>
 
@@ -86,14 +87,15 @@ const Nav = () => {
       {/* Mobile navigation : if the screen size is above 640px hide the below div*/}
       <div className="sm:hidden flex relative">
 
-        {isUserLogged ?
+        {session?.user ?
           (
             <div>
               <Image
-                src='/assets/images/logo.svg'
+                src={session?.user?.image}
                 width={37}
                 height={37}
                 alt='profile'
+                className='rounded-full'
                 onClick={() => setToggle((prev) => !prev)}
               />
 

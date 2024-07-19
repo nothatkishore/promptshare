@@ -1,9 +1,9 @@
 import Feed from '@components/Feed'
+import Nav from '@components/Nav'
 
 const Home = () => {
   return (
     <section className="w-full flex-center flex-col">
-      
         <h1 className="head_text text-center">
             Discover & Share
             <br className="max-md:hidden" />
@@ -15,9 +15,7 @@ const Home = () => {
             Promptopedia is a open source AI prompting tool for 
             mordern world to discover, create and share creative prompts
         </p>
-
         <Feed />
-
     </section>
   ) 
 }
