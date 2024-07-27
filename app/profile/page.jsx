@@ -13,7 +13,6 @@ const MyProfile = () => {
 
     useEffect(() =>
     {   
-
         const fetchPost = async () =>
         {
             const response = await fetch(`/api/users/${session?.user.id}/posts`)
@@ -24,9 +23,9 @@ const MyProfile = () => {
         if(session?.user.id)
             fetchPost()
 
-    }, [])
+    }, [session?.user.id])
 
-    const handleEdit = () =>
+    const handleEdit = async () =>
     {
 
     }
